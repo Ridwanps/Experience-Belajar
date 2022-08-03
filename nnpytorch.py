@@ -9,7 +9,7 @@ model = nn.Sequential(
     nn.Linear(8, 4),
     nn.ReLU(),
     nn.Linear(4, 2),
-    nn.LogSoftmax(1)
+    nn.CrossEntropyLoss(1)
 )  
-criterion = nn.NLLLoss()
+criterion = nn.BCELoss()
 optimizer = optim.AdamW(model.parameters(), lr=0.001)
